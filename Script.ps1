@@ -1,54 +1,51 @@
-﻿# Install yt-dlp
+﻿# Instalar yt-dlp
 winget install yt-dlp
 
-# Install ffmpeg
+# Instalar ffmpeg
 winget install ffmpeg
 
-# Define the path to your folder
+# Definir la ubicacion del archivo
 $folderPath = Get-Location
 
-# Create an empty array to hold the objects
-$objects = @()
-
-# Get all .txt files in the folder
+# leer los archivos que terminan en txt en el folder
 $txtFiles = Get-ChildItem -Path $folderPath -Filter "*.txt"
 
-# Read the contents of the file
+# Leer el contenido de los archivo
 $fileContent = Get-Content $txtFiles
 
-# Create an empty array to hold the split items
+# Crear una coleccion para los links
 $collection = @()
 
-# Process each line in the file
+# Procesar cada linea de la collecion
 foreach ($line in $fileContent) {
-    # Split the line by comma
+    # Separar por coma
     $items = $line -split ','
 
-    # Add each item to the collection
+    # Agregar cada linea a la colleccion
     $collection += $items
 }
-
-# Output the collection
 $collection
 
 foreach ($url in $collection) {
-    # Insert the command before each URL
+    # Constante para el comando que se va a ejecutar para cada link 
     $command = "yt-dlp.exe -f 140 $url"
     
-    # Output the command
+    # Mostrar comando en consola
     Write-Output $command
     
-    # Execute the command
+    # Ejecutar
     Invoke-Expression $command
 }
 
+# Encontrar todos los archivos .m4a y convertirlos a .mp3 con ffmpeg
 foreach ($i in Get-ChildItem *.m4a) {
     ffmpeg -i $i.FullName ("{0}.mp3" -f $i.BaseName)
 }
 
+# Una vez terminada la conversion borrar los archivos .m4a
 Remove-Item *.m4a -Recurse
 
-
+# Self promotion
 Write-Host "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 Write-Host "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 Write-Host "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
@@ -111,14 +108,16 @@ Write-Host "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 Write-Host "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 Write-Host "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 
-
+Write-Host "Si ejecutaste esto sin seguirme en mis redes eres un perro mal agradecido"
+Write-Host "Si ejecutaste esto sin seguirme en mis redes eres un perro mal agradecido"
+Write-Host "Si ejecutaste esto sin seguirme en mis redes eres un perro mal agradecido"
 Write-Host "Si ejecutaste esto sin seguirme en mis redes eres un perro mal agradecido"
 
 Write-Host "Sigueme en: https://linktr.ee/grimel666"
 
 Start-Process "https://linktr.ee/grimel666"
 
-Read-Host -Prompt "Press Enter to exit"
+Read-Host -Prompt "Presiona Enter para salir jotolon"
 
 
 
