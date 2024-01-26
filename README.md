@@ -18,7 +18,7 @@ This is a script that uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) && [ffmpeg
 
 # Instructions:
 - Download the script to a folder where you will save the songs.
-- Create a text file named any_name.txt within the same folder (only one file per folder).
+- Create a text file any_name.txt within the same folder (only one file per folder).
 - Inside that file, paste all the YouTube links, all without spaces and separated only by a comma [(CSV)](https://www.howtogeek.com/348960/what-is-a-csv-file-and-how-do-i-open-it/)
   e.g.: https://www.youtube.com/watch?v=mEACzoMJuMA,https://www.youtube.com/watch?v=6HbZDHfMyXM,https://www.youtube.com/watch?v=00E6RTJh2Ro
 - Save the file.
