@@ -5,3 +5,17 @@ y
 [ffmpeg](https://ffmpeg.org/download.html#build-windows)
 Para descargar directo desde youtube a .mpe a la carpeta root donde esto se ejecute
 
+# Instrucciones:
+
+- Descarga el script a una carpeta en donde guardaras las canciones
+- Crea un archivo de texto cualquier_nombre.txt dentro de la misma carpeta (solo un archivo por carpeta)
+- Dentro de ese archivo pega todos los links a youtube, todo sin espacion y separado solo por una coma
+  Ej: https://www.youtube.com/watch?v=mEACzoMJuMA,https://www.youtube.com/watch?v=6HbZDHfMyXM,https://www.youtube.com/watch?v=00E6RTJh2Ro
+- Guardar el archivo
+- Dar click derecho al script y presionar ejecutar con powershell
+- Listo
+- No olvides seguirme para mas sorpresas
+- https://linktr.ee/grimel666
+  
+
+
